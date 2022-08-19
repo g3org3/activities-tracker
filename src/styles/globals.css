@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background: black;
+}
+
+
+main {
+    height: 100vh;
+    overflow: auto;
+}
+
+@supports (-webkit-touch-callout: none) {
+
+    /* CSS specific to iOS devices */
+    main {
+        height: 92vh;
+    }
+}
