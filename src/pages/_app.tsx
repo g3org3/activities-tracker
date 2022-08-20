@@ -8,6 +8,8 @@ import superjson from 'superjson'
 import type { AppRouter } from 'server/router'
 import 'styles/globals.css'
 
+// https://www.simicart.com/manifest-generator.html/
+// https://progressier.com/pwa-icons-and-ios-splash-screen-generator
 const MyApp: AppType = ({ Component, pageProps: { session, ...pageProps } }) => {
   return (
     <>

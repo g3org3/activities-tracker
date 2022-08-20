@@ -1,18 +1,30 @@
 // @ts-check
-import { z } from "zod";
+import { z } from 'zod'
 
 /**
  * Specify your server-side environment variables schema here.
  * This way you can ensure the app isn't built with invalid env vars.
  */
 export const serverSchema = z.object({
-  // DATABASE_URL: z.string().url(),
-  NODE_ENV: z.enum(["development", "test", "production"]),
-  // NEXTAUTH_SECRET: z.string(),
-  // NEXTAUTH_URL: z.string().url(),
-  // DISCORD_CLIENT_ID: z.string(),
-  // DISCORD_CLIENT_SECRET: z.string(),
-});
+  DATABASE_URL: z.string().url(),
+  NODE_ENV: z.enum(['development', 'test', 'production']),
+
+  NEXTAUTH_SECRET: z.string(),
+  NEXTAUTH_URL: z.string().url(),
+
+  GITHUB_CLIENT_ID: z.string(),
+  GITHUB_CLIENT_SECRET: z.string(),
+
+  PUSHER_APP_ID: z.string(),
+  PUSHER_KEY: z.string(),
+  PUSHER_SECRET: z.string(),
+  PUSHER_CLUSTER: z.string(),
+
+  TWILIO_ACCOUNT_ID: z.string(),
+  TWILIO_MSID: z.string(),
+  TWILIO_BASIC_AUTH: z.string(),
+  TWILIO_FROM: z.string(),
+})
 
 /**
  * Specify your client-side environment variables schema here.
@@ -21,7 +33,7 @@ export const serverSchema = z.object({
  */
 export const clientSchema = z.object({
   // NEXT_PUBLIC_BAR: z.string(),
-});
+})
 
 /**
  * You can't destruct `process.env` as a regular object, so you have to do
@@ -31,4 +43,4 @@ export const clientSchema = z.object({
  */
 export const clientEnv = {
   // NEXT_PUBLIC_BAR: process.env.NEXT_PUBLIC_BAR,
-};
+}
